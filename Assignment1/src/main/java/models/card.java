@@ -10,7 +10,7 @@ package models;/*
 
 import java.util.Scanner;
 
-public class Card{
+public class Card {
 
     private int value; //2 through 14 to represent 2 through Ace
     private String suit;
