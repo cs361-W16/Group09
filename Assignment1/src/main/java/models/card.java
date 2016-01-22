@@ -26,6 +26,9 @@ public class Card {
         suit = s;
     }
 
+    public void setValue (int value) { this.value = value; }
+    public void setSuit (String suit) { this.suit = suit; }
+
     public int getValue(){
         return value;
     }

@@ -107,5 +107,60 @@ $.getJSON( "/AcesUp/state.json", function( board ) {
 <button id="swap3">Swap Row 3</button>
 <button id="swap4">Swap Row 4</button>
 
+<br>
+<button id="initDeck">init</button>
+<button id="removeCardButton">remove card</button>
+<div id="disp"></div>
+
+<script>
+
+var deck;
+
+function display(data) {
+$( '#disp' ).html("");
+  $.each(data.cards, function( key, value ) {
+    $( '#disp' ).append("Value: " +value.value+ "; Suit: " +value.suit+ "<BR>");
+  });
+}
+
+$.getJSON("/AcesUp/init", function( data ) {
+display(data);
+deck = data;
+});
+
+$("#initDeck").click(function(){
+$.ajax({
+  type: "GET",
+  url: "/AcesUp/init",
+  data: JSON.stringify(deck),
+  success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        deck = data;
+        display(data);},
+  contentType:"application/json; charset=utf-8",
+  dataType:"json",
+});
+});
+
+$("#removeCardButton").click(function(){
+
+/* deck.action = "add";
+deck.item = $("#txt_name").val(); */
+
+$.ajax({
+  type: "POST",
+  url: "/AcesUp/removeCard",
+  data: JSON.stringify(deck),
+  success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        deck = data;
+        display(data);},
+  contentType:"application/json; charset=utf-8",
+  dataType:"json",
+});
+
+
+});
+
+</script>
+
 </body>
 </html>
