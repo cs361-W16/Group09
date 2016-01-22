@@ -34,3 +34,10 @@ public class ApplicationController {
     }
 
 }
+
+
+public class Board {
+
+    public
+
+}

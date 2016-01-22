@@ -5,7 +5,7 @@ package models;
  */
 
 public class Scoring {
-    public Integer Score = 0;
+    public Integer Score;
 
     public Scoring() {
         //Run through the columns
