@@ -18,9 +18,9 @@ public class Deck {
         }
         String suit[] = { "Hearts", "Diamonds", "Clubs", "Spades" };
         int qrtdeck = 0;
-        for(int i = 0; i <= 3; ++i){
+        for(int i = 0; i <= 3; i++){
             String s = suit[i];
-            for(int j = 0; j <= 12; ++j){
+            for(int j = 0; j <= 12; j++){
                 d[j + qrtdeck] = new Card(j + 2, s);
             }
             qrtdeck = qrtdeck + 13;
