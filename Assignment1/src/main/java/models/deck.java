@@ -33,5 +33,4 @@ public class Deck {
         Collections.shuffle(deckList);
         s = deckList.toArray(s);
     }
-
 }

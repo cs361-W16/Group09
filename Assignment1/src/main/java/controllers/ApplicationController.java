@@ -31,6 +31,14 @@ public class ApplicationController {
     }
 
     public Result acesUp() {
-        return Results.html().template("views/AcesUp/AcesUp.flt.html");
+        Result result =  Results.html().template("views/AcesUp/AcesUp.flt.html");
+        //result.render("paulTest", "4");
+        return result;
+    }
+
+    public Result getState() {
+        Board testBoard = new Board();
+        testBoard.modBoard(3,3,"Jack of Studs");
+        return Results.json().render(testBoard);
     }
 }
