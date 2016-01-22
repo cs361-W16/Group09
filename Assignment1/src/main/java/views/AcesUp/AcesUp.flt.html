@@ -2,6 +2,19 @@
 <h1>Aces Up</h1>
 <link href="/assets/css/AcesUp.css" rel="stylesheet">
 <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
+<script>
+    function ajax(url) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+         document.getElementById("test").innerHTML = xhttp.responseText;
+         //document.getElementById("test").innerHTML = url;
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();
+    }
+</script>
 
 <body>
 
@@ -93,6 +106,22 @@
 <button id="swap2">Swap Row 2</button>
 <button id="swap3">Swap Row 3</button>
 <button id="swap4">Swap Row 4</button>
+<br>
+<button onclick="ajax('/AcesUp/init')">init</button>
+<button onclick="ajax('/AcesUp/control')">control</button>
+
+<div id="test"></div>
+
+<ul id="users">
+</ul>
+
+<script>
+    $.getJSON( "/ranSuccessfully.json", function( usersList ) {
+        $.each(usersList.persons, function( key, value ) {
+        $('#users').append("<li><b>Name:</b> "+value.name+"  <b>GitHub:</b> "+value.githubUserName+" <b>OS:</b> "+value.os+"</li>");
+        });
+    });
+</script>
 
 </body>
 </html>
