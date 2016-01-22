@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by Dilon_000 on 1/21/2016.
  */
-public class cardTest {
+public class CardTest {
 
     @Test
     public void cardValueTest1(){
