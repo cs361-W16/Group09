@@ -17,5 +17,5 @@ public class DrawFourTest {
 		DrawFour d0 = new DrawFour();
 		assertEquals(52, d0.Draw(52));
 	}
-   
+
 }
