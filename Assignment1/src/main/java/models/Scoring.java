@@ -16,7 +16,7 @@ public class Scoring {
                 String bottom = getCard(j+1,i);
                 //Check for suit and that the top is greater by 1
                 if (top[2] == bottom[2] && Integer.parseInt(top.substring(0,1)) == Integer.parseInt(bottom.substring(0,1))+1) {
-                    //Remove card
+                    //Remove Card
                     modBoard(j+1,i,0);
                     //Increment score
                     incScore();

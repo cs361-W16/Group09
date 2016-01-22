@@ -11,35 +11,35 @@ public class cardTest {
 
     @Test
     public void cardValueTest1(){
-        card c1 = new card();
+        Card c1 = new Card();
 
         assertEquals(0, c1.getValue());
     }
 
     @Test
     public void cardValueTest2(){
-        card c2 = new card(1);
+        Card c2 = new Card(1);
 
         assertEquals(1, c2.getValue());
     }
 
     @Test
     public void cardSuitTest1(){
-        card c3 = new card();
+        Card c3 = new Card();
 
         assertEquals("None", c3.getSuit());
     }
 
     @Test
     public void cardSuitTest2(){
-        card c4 = new card("Hearts");
+        Card c4 = new Card("Hearts");
 
         assertEquals("Hearts", c4.getSuit());
     }
 
     @Test
     public void cardValueSuitTest(){
-        card c5 = new card(1, "Hearts");
+        Card c5 = new Card(1, "Hearts");
 
         assertEquals(1, c5.getValue());
         assertEquals("Hearts", c5.getSuit());
@@ -47,35 +47,35 @@ public class cardTest {
 
     @Test
     public void cardPrintTest1(){
-        card c6 = new card(2, "Hearts");
+        Card c6 = new Card(2, "Hearts");
 
         assertEquals("2 of Hearts", c6.printCard());
     }
 
     @Test
     public void cardPrintTest2(){
-        card c7 = new card(11, "Hearts");
+        Card c7 = new Card(11, "Hearts");
 
         assertEquals("Jack of Hearts", c7.printCard());
     }
 
     @Test
     public void cardPrintTest3(){
-        card c8 = new card(12, "Hearts");
+        Card c8 = new Card(12, "Hearts");
 
         assertEquals("Queen of Hearts", c8.printCard());
     }
 
     @Test
     public void cardPrintTest4(){
-        card c9 = new card(13, "Hearts");
+        Card c9 = new Card(13, "Hearts");
 
         assertEquals("King of Hearts", c9.printCard());
     }
 
     @Test
     public void cardPrintTest5(){
-        card c10 = new card(14, "Hearts");
+        Card c10 = new Card(14, "Hearts");
 
         assertEquals("Ace of Hearts", c10.printCard());
     }
