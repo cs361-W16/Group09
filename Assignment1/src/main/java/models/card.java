@@ -1,52 +1,64 @@
-package models;/*
- * Original Author: davisdy
- * File: models.Card.java
- * Date Created: March 10, 2012 at 3:00p.m.
- * Last Modified: March 10, 2012 at 3:00p.m.
- *
- * This file contains a class to simulate playing cards for programs
- * of card games
+package models;
+
+/**
+ * Created by Dilon_000 on 1/21/2016.
  */
+public class card {
 
-import java.util.Scanner;
-
-public class Card{
-
-    private int value; //2 through 14 to represent 2 through Ace
+    private int value;
     private String suit;
 
-    public Card(){
-        this.value = 0;
-        this.suit = "None";
+    public card(){
+        value = 0;
+        suit = "None";
     }
-    public Card(int a, String b){
-        this.value = a;
-        this.suit = b;
+
+    public card(int v){
+        value = v;
     }
+
+    public card(String s){
+        suit = s;
+    }
+
+    public card(int v, String s){
+        value = v;
+        suit = s;
+    }
+
     public int getValue(){
         return value;
     }
 
-    /*
-     * Prints the suit and value of the card in the way it would be read
-     * in a true card game. Values 11 through 14 print the names of
-     * the face cards and ace respectively
-     */
-    public void printCard(){
-        if(value == 14){
-            System.out.printf("Ace of %s\n", suit);
-        }
-        else if(value == 13){
-            System.out.printf("King of %s\n", suit);
+    public String getSuit(){
+        return suit;
+    }
+
+    public String printCard(){
+        if(value == 11){
+            System.out.printf("Jack of %s\n", suit);
+
+            return "Jack of " + suit;
         }
         else if(value == 12){
             System.out.printf("Queen of %s\n", suit);
+
+            return "Queen of " + suit;
         }
-        else if(value == 11){
-            System.out.printf("Jack of %s\n", suit);
+        else if(value == 13){
+            System.out.printf("King of %s\n", suit);
+
+            return "King of " + suit;
         }
-        else{
+        else if(value == 14){
+            System.out.printf("Ace of %s\n", suit);
+
+            return "Ace of " + suit;
+        }
+        else {
             System.out.printf("%d of %s\n", value, suit);
+
+            return value + " of " + suit;
         }
     }
 }
