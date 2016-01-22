@@ -18,6 +18,7 @@ package controllers;
 
 import ninja.Result;
 import ninja.Results;
+import models.Board;
 
 import com.google.inject.Singleton;
 
@@ -32,5 +33,4 @@ public class ApplicationController {
     public Result acesUp() {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
-
 }
