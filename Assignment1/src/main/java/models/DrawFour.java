@@ -10,9 +10,9 @@ import java.util.List;
 
 public class DrawFour {
 	
-	//grab current deck count
+	//grab current Deck count
 	
-	//is it possible to take up to 4 cards out of the deck
+	//is it possible to take up to 4 cards out of the Deck
 	
 	//
 }

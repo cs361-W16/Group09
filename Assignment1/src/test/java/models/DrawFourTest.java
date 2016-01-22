@@ -10,7 +10,7 @@ public class DrawFourTest {
 	
 	@Test
 	public void Draw1() {
-		
+
 	}
 
 	

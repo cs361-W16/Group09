@@ -3,25 +3,25 @@ package models;
 /**
  * Created by Dilon_000 on 1/21/2016.
  */
-public class card {
+public class Card {
 
     private int value;
     private String suit;
 
-    public card(){
+    public Card(){
         value = 0;
         suit = "None";
     }
 
-    public card(int v){
+    public Card(int v){
         value = v;
     }
 
-    public card(String s){
+    public Card(String s){
         suit = s;
     }
 
-    public card(int v, String s){
+    public Card(int v, String s){
         value = v;
         suit = s;
     }
