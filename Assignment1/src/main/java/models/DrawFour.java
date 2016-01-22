@@ -15,5 +15,4 @@ public class DrawFour {
 	//is it possible to take up to 4 cards out of the deck
 	
 	//
-    //test test test test
 }
