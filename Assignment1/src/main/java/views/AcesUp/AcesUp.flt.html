@@ -3,7 +3,6 @@
 <link href="/assets/css/AcesUp.css" rel="stylesheet">
 <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
 <script>
-
 $.getJSON( "/ranSuccessfully.json", function( usersList ) {
 
 $.each(usersList.persons, function( key, value ) {
@@ -13,6 +12,7 @@ $('#users').append("<li><b>Name:</b> "+value.name+"  <b>GitHub:</b> "+value.gith
 
 });
 </script>
+
 <body>
 
 <table>
