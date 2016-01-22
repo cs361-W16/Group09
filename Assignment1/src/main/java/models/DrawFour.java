@@ -9,10 +9,19 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DrawFour {
-	
-	//grab current Deck count
-	
-	//is it possible to take up to 4 cards out of the Deck
-	
-	//
+
+    public int cardDeck = 52;
+
+    public int Draw(int drawed){
+        if(cardDeck != 0) {
+            cardDeck -= 1;
+            //test print
+            System.out.println("You drew one card and have:" + cardDeck + " cards left in the deck");
+        }
+        else {
+            System.out.println("You have no more cards to deal!");
+        }
+        return(drawed);
+    }
+
 }
