@@ -25,19 +25,23 @@ import controllers.ApplicationController;
 public class Routes implements ApplicationRoutes {
 
     @Override
-    public void init(Router router) {  
-        
+    public void init(Router router) {
+
         router.GET().route("/").with(ApplicationController.class, "index");
 //        router.GET().route("/hello_world.json").with(ApplicationController.class, "helloWorldJson");
         router.GET().route("/AcesUp").with(ApplicationController.class, "acesUp");
         router.GET().route("/AcesUp/state.json").with(ApplicationController.class, "getState");
+
+        router.GET().route("/AcesUp/init").with(ApplicationController.class, "init");
+        router.POST().route("/AcesUp/removeCard").with(ApplicationController.class, "remove");
+
 
         ///////////////////////////////////////////////////////////////////////
         // Assets (pictures / javascript)
         ///////////////////////////////////////////////////////////////////////    
         router.GET().route("/assets/webjars/{fileName: .*}").with(AssetsController.class, "serveWebJars");
         router.GET().route("/assets/{fileName: .*}").with(AssetsController.class, "serveStatic");
-        
+
         ///////////////////////////////////////////////////////////////////////
         // Index / Catchall shows index page
         ///////////////////////////////////////////////////////////////////////
