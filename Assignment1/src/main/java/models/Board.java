@@ -7,6 +7,7 @@ public class Board {
     public String[][] state = new String[13][4];
     public Card[][] cardLayout = new Card[13][4];
     public Integer c0, c1, c2, c3;
+    public Deck theDeck = new Deck;
 
     //Shuffle function should add this.
     public Board() {
@@ -77,13 +78,41 @@ public class Board {
         state[x][y] = z;
     }
 
+    public void modLayout (int x, int y, Card z){
+        cardLayout[x][y] = z;
+        state[x][y] = z.printCard();
+    }
+
+
     public String getCardOnBoard (int x, int y) {
         return state[x][y];
     }
 
-    public void dealFourBoard() {
+    public void drawFour() {
 
+        cardLayout[c0][0] = theDeck.drawCard();
+        theDeck.remove();
+        cardLayout[c1][0] = theDeck.drawCard();
+        theDeck.remove();
+        cardLayout[c2][0] = theDeck.drawCard();
+        theDeck.remove();
+        cardLayout[c3][0] = theDeck.drawCard();
+        theDeck.remove();
+
+
+        incC0();
+        incC1();
+        incC2();
+        incC3();
     }
 
+    public boolean isEmpty(int row){
+        for(int x=0; x<=12; x++){
+            if(state[x][row] != "0"){
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
