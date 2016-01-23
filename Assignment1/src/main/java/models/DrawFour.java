@@ -14,9 +14,9 @@ public class DrawFour {
 
     public int Draw(int drawed){
         if(cardDeck != 0) {
-            cardDeck -= 1;
+            cardDeck -= 4;
             //test print
-            System.out.println("You drew one card and have:" + cardDeck + " cards left in the deck");
+            System.out.println("You drew four card and have:" + cardDeck + " cards left in the deck");
         }
         else {
             System.out.println("You have no more cards to deal!");
