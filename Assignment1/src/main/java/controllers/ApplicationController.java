@@ -45,7 +45,7 @@ public class ApplicationController {
     }
 
     public Result getState() {
-        //testBoard.modBoard(3,3,"Jack of Studs");
+        testBoard.modBoard(3,3,"Jack of Studs");
         return Results.json().render(testBoard);
     }
 
@@ -64,7 +64,7 @@ public class ApplicationController {
         return Results.json().render(testBoard);
     }
 
-    public Result init() {
+    /*public Result init() {
         Deck deck = new Deck();
         for(int x=2; x<=14; x++) {
             deck.addCard(new Card(x, "hearts"));
@@ -77,6 +77,6 @@ public class ApplicationController {
         deck.remove();
 
         return Results.json().render(deck);
-    }
+    }*/
 
 }

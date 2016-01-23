@@ -35,8 +35,8 @@ public class Routes implements ApplicationRoutes {
         router.GET().route("/AcesUp/score.json").with(ApplicationController.class, "score");
 
 
-        router.GET().route("/AcesUp/init").with(ApplicationController.class, "init");
-        router.POST().route("/AcesUp/removeCard").with(ApplicationController.class, "remove");
+        //router.GET().route("/AcesUp/init").with(ApplicationController.class, "init");
+        //router.POST().route("/AcesUp/removeCard").with(ApplicationController.class, "remove");
 
 
         ///////////////////////////////////////////////////////////////////////

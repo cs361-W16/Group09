@@ -29,7 +29,7 @@ public class Deck {
             }
             qrtdeck = qrtdeck + 13;
         }
-        deck = new ArrayList<Card>Arrays.asList(d);
+        deck = new ArrayList<Card>(Arrays.asList(d));
         Collections.shuffle(deck);
     }
 

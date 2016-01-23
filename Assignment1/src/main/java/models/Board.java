@@ -7,7 +7,7 @@ public class Board {
     public String[][] state = new String[13][4];
     public Card[][] cardLayout = new Card[13][4];
     public Integer c0, c1, c2, c3;
-    public Deck theDeck = new Deck;
+    public Deck theDeck = new Deck();
 
     //Shuffle function should add this.
     public Board() {
