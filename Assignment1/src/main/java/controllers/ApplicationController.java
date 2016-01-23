@@ -30,6 +30,7 @@ import com.google.inject.Singleton;
 public class ApplicationController {
     public Board testBoard = new Board();
     public Deck theDeck = new Deck();
+    public Scoring theScore = new Scoring();
 
     public Result index() {
         return Results.html();
@@ -53,7 +54,7 @@ public class ApplicationController {
     }
 
     public Result score() {
-        scoreCard(testBoard);
+        theScore.scoreCard(testBoard);
         return Results.json().render(testBoard);
     }
 
