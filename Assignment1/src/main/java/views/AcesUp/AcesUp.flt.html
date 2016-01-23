@@ -52,7 +52,7 @@ $(document).ready(function(){
 
 //Swap 0
 $(document).ready(function(){
-    $('#scoreButton').click(function(){
+    $('#swap0').click(function(){
         $.getJSON( "/AcesUp/swap0.json", function( board ) {
             $.each(board.state,
                 function( i, row ) {
@@ -67,7 +67,7 @@ $(document).ready(function(){
 
 //Swap 1
 $(document).ready(function(){
-    $('#scoreButton').click(function(){
+    $('#swap1').click(function(){
         $.getJSON( "/AcesUp/swap1.json", function( board ) {
             $.each(board.state,
                 function( i, row ) {
@@ -82,7 +82,7 @@ $(document).ready(function(){
 
 //Swap 2
 $(document).ready(function(){
-    $('#scoreButton').click(function(){
+    $('#swap2').click(function(){
         $.getJSON( "/AcesUp/swap2.json", function( board ) {
             $.each(board.state,
                 function( i, row ) {
@@ -97,7 +97,7 @@ $(document).ready(function(){
 
 //Swap 3
 $(document).ready(function(){
-    $('#scoreButton').click(function(){
+    $('#swap3').click(function(){
         $.getJSON( "/AcesUp/swap3.json", function( board ) {
             $.each(board.state,
                 function( i, row ) {
@@ -197,11 +197,11 @@ $(document).ready(function(){
 </table>
 
 <button id="dealButton">Deal</button>
-<button id="swap0">Move Column 1 to Empty Column</button>
-<button id="swap1">Move Column 2 to Empty Column</button>
+<button id="swap0">Move Column 0 to Empty Column</button>
+<button id="swap1">Move Column 1 to Empty Column</button>
 <br>
-<button id="swap2">Move Column 3 to Empty Column</button>
-<button id="swap3">Move Column 4 to Empty Column</button>
+<button id="swap2">Move Column 2 to Empty Column</button>
+<button id="swap3">Move Column 3 to Empty Column</button>
 <br>
 <button id="scoreButton">Score</button>
 <button id="newGame">New Game</button>
