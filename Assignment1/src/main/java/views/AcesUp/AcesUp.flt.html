@@ -125,16 +125,16 @@ deck = data;
 });
 
 $("#initDeck").click(function(){
-$.ajax({
-  type: "GET",
-  url: "/AcesUp/init",
-  data: JSON.stringify(deck),
-  success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
-        deck = data;
-        display(data);},
-  contentType:"application/json; charset=utf-8",
-  dataType:"json",
-});
+    $.ajax({
+      type: "GET",
+      url: "/AcesUp/init",
+      data: JSON.stringify(deck),
+      success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+            deck = data;
+            display(data);},
+      contentType:"application/json; charset=utf-8",
+      dataType:"json",
+    });
 });
 
 $("#removeCardButton").click(function(){
