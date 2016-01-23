@@ -4,6 +4,8 @@
 <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
 
 <script>
+
+//Runs at startup
 $.getJSON( "/AcesUp/state.json", function( board ) {
     $.each(board.state,
         function( i, row ) {
@@ -13,6 +15,8 @@ $.getJSON( "/AcesUp/state.json", function( board ) {
             });
     });
 });
+
+//The deal button function
 $(document).ready(function(){
     $('#dealButton').click(function(){
         $.getJSON( "/AcesUp/deal.json", function( board ) {
