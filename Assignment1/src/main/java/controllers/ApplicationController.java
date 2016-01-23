@@ -28,6 +28,7 @@ import com.google.inject.Singleton;
 @Singleton
 public class ApplicationController {
     public Board testBoard = new Board();
+    public Deck theDeck = new Deck();
 
     public Result index() {
         return Results.html();
@@ -46,7 +47,7 @@ public class ApplicationController {
 
 
     public Result deal() {
-        testBoard.modBoard(2,2,"King of Dudes");
+        testBoard.modBoard(2,2,"Hella");
         return Results.json().render(testBoard);
     }
 
