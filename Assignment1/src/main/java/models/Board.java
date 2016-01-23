@@ -19,7 +19,11 @@ public class Board {
         state[x][y] = z;
     }
 
-    public String getCard (int x, int y) {
+    public String getCardOnBoard (int x, int y) {
         return state[x][y];
+    }
+
+    public void dealFourBoard() {
+
     }
 }
