@@ -29,7 +29,12 @@ public class Board {
     public void cardToString() {
         for (int i = 0; i < 13; i++) {
             for (int j = 0; j < 4; j++) {
-                state[i][j] = cardLayout[i][j].printCard();
+                if (cardLayout[i][j].printCard() == "0 of None") {
+                    state[i][j] = "";
+                }
+                else {
+                    state[i][j] = cardLayout[i][j].printCard();
+                }
             }
         }
     }
