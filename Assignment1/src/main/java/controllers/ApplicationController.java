@@ -30,6 +30,10 @@ public class ApplicationController {
     public Board testBoard = new Board();
     public Deck theDeck = new Deck();
 
+    //for the game
+    public Board gameBoard = new Board();
+    public Deck gameDeck = new Deck();
+
     public Result index() {
         return Results.html();
     }
@@ -64,6 +68,23 @@ public class ApplicationController {
         deck.remove();
 
         return Results.json().render(deck);
+    }
+
+    /*public Result getState() {
+        testBoard.modBoard(3,3,"Jack of Studs");
+        return Results.json().render(testBoard);
+    }*/
+
+    public Result DrawFour() {
+
+        gameDeck.addCard();
+        int count = 0;
+
+        for (int d = 0; d > 4; d++) {
+
+
+        }
+        return Results.json().render(gameBoard);
     }
 
 }
