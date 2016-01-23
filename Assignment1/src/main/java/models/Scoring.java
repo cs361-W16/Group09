@@ -7,7 +7,7 @@ package models;
 public class Scoring {
     public Integer Score;
 
-    public Scoring(Board state) {
+    public void Scoring(Board state) {
         //Run through the columns
         for (int i = 0; i < 3; i++) {
             //Run through the rows
