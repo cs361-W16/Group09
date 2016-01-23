@@ -21,6 +21,7 @@ import models.Deck;
 import ninja.Result;
 import ninja.Results;
 import models.Board;
+import models.Scoring;
 
 import com.google.inject.Singleton;
 
@@ -48,6 +49,11 @@ public class ApplicationController {
 
     public Result deal() {
         testBoard.dealFourBoard();
+        return Results.json().render(testBoard);
+    }
+
+    public Result score() {
+        scoreCard(testBoard);
         return Results.json().render(testBoard);
     }
 

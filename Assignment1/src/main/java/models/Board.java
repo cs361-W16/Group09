@@ -19,7 +19,7 @@ public class Board {
         //Card array
         for (int i = 0; i < 13; i++) {
             for (int j = 0; j < 4; j++) {
-                cardLayout[i][j] = new Card;
+                cardLayout[i][j] = new Card();
             }
         }
         c0 = -1; c1 = -1; c2 = -1; c3 =-1;

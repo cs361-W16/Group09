@@ -11,17 +11,15 @@ public class Scoring {
         score = 0;
     }
 
-    public void scoreCard(Board state) {
+    public void scoreCard(Board layout) {
         //Run through the columns
         for (int i = 0; i < 3; i++) {
             //Run through the rows
             for (int j = 0; j < 12; j++) {
-                String top = state.getCardOnBoard(j,i);
-                String bottom = state.getCardOnBoard(j+1,i);
                 //Check for suit and that the top is greater by 1
-                if (top.charAt(2) == bottom.charAt(2) && Integer.parseInt(top.substring(0,1)) == Integer.parseInt(bottom.substring(0,1))+1) {
+                if (layout.cardLayout[j][i].getSuit() == layout.cardLayout[j+1][i].getSuit() && layout.cardLayout[j][i].getValue() == layout.cardLayout[j+1][i].getValue()+1 ){
                     //Remove card
-                    state.modBoard(j+1,i,"0");
+                    layout.cardLayout[j+1][i] = new Card();
                     //Increment score
                     incScore();
                 }

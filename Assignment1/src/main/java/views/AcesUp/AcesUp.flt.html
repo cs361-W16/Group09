@@ -30,6 +30,21 @@ $(document).ready(function(){
         });
     });
 });
+
+//The score button function
+$(document).ready(function(){
+    $('#scoreButton').click(function(){
+        $.getJSON( "/AcesUp/score.json", function( board ) {
+            $.each(board.state,
+                function( i, row ) {
+                    $.each(row,
+                        function( j, cardState) {
+                        $('#c'+j+' .l'+i).text(cardState.toString());
+                    });
+            });
+        });
+    });
+});
 </script>
 
 
@@ -118,6 +133,7 @@ $(document).ready(function(){
 <button id="swap2">Swap Row 2</button>
 <button id="swap3">Swap Row 3</button>
 <button id="swap4">Swap Row 4</button>
+<button id="scoreButton">Score</button>
 
 <br>
 <button id="initDeck">init</button>
