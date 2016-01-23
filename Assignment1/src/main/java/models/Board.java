@@ -25,7 +25,7 @@ public class Board {
             }
         }
         theDeck.newDeck();
-        c0 = 0; c1 = 0; c2 = 0; c3 = 0;
+        c0 = -1; c1 = -1; c2 = -1; c3 = -1;
         score = 0;
     }
 
@@ -92,16 +92,15 @@ public class Board {
     }
 
     public void drawFour() {
+        incC0();
+        incC1();
+        incC2();
+        incC3();
 
         modCardLayout(c0,0);
         modCardLayout(c1,1);
         modCardLayout(c2,2);
         modCardLayout(c3,3);
-
-        incC0();
-        incC1();
-        incC2();
-        incC3();
     }
 
     public boolean isEmpty(int row){

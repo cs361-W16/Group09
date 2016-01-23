@@ -4,7 +4,6 @@
 <script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
 
 <script>
-
 //Reset Board
 $(document).ready(function(){
     $('#newGame').click(function(){
@@ -46,6 +45,7 @@ $(document).ready(function(){
                         $('#c'+j+' .l'+i).text(cardState.toString());
                     });
             });
+            $('#score').text(board.score);
         });
     });
 });
@@ -56,6 +56,8 @@ $(document).ready(function(){
 
 <body>
 <table>
+    Score:
+    <p id="score"/>
     <tr class="title">
         <td>Column 0</td>
         <td >Column 1</td>
@@ -141,11 +143,5 @@ $(document).ready(function(){
 <button id="swap4" onclick="swap(3)">Swap Row 4</button>
 <button id="scoreButton">Score</button>
 <button id="newGame">New Game</button>
-
-<br>
-<button id="initDeck">init</button>
-<button id="removeCardButton">remove card</button>
-<div id="disp"></div>
-
 </body>
 </html>

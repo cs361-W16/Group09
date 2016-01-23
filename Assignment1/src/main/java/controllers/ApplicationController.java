@@ -56,7 +56,7 @@ public class ApplicationController {
     }
 
     public Result score() {
-        theScore.scoreCard(testBoard);
+        testBoard.scoreCard();
         testBoard.cardToString();
 
         return Results.json().render(testBoard);
