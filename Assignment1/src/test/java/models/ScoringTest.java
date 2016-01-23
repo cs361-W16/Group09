@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
  */
 public class ScoringTest {
 
+    Scoring scoreTest = new Scoring();
+
     @Test
     public void testScoring() throws Exception {
 
@@ -16,6 +18,6 @@ public class ScoringTest {
 
     @Test
     public void testGetScore() throws Exception {
-
+        assertEquals("Initial score is 0","0",scoreTest.getScore());
     }
 }

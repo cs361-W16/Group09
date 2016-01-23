@@ -5,9 +5,13 @@ package models;
  */
 
 public class Scoring {
-    public Integer Score;
+    public Integer score;
 
-    public void Scoring(Board state) {
+    public Scoring() {
+        score = 0;
+    }
+
+    public void scoreCard(Board state) {
         //Run through the columns
         for (int i = 0; i < 3; i++) {
             //Run through the rows
@@ -26,10 +30,10 @@ public class Scoring {
     }
 
     public Integer getScore() {
-        return Score;
+        return score;
     }
 
     private void incScore() {
-        Score++;
+        score++;
     }
 }
