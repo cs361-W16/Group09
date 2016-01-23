@@ -77,6 +77,19 @@ public class Board {
         c3--;
     }
 
+    public int getC(int x) {
+        if (x == 0)
+            return c0;
+        if (x == 1)
+            return c1;
+        if (x == 2)
+            return c2;
+        if (x == 3)
+            return c3;
+        else
+            return 0;
+    }
+
     public void modBoard (int x, int y, String z){
         state[x][y] = z;
     }
@@ -112,29 +125,103 @@ public class Board {
         return true;
     }
 
+    public void swap0() {
+            cardLayout[0][0] = cardLayout[getC(0)][0];
+            cardLayout[getC(0)][0] = new Card();
+    }
+
+    public void swap1() {
+        cardLayout[1][1] = cardLayout[getC(1)][1];
+        cardLayout[getC(1)][1] = new Card();
+    }
+
+    public void swap2() {
+        cardLayout[2][2] = cardLayout[getC(2)][2];
+        cardLayout[getC(2)][2] = new Card();
+    }
+
+    public void swap3() {
+        cardLayout[3][3] = cardLayout[getC(3)][3];
+        cardLayout[getC(3)][3] = new Card();
+    }
+
     public void modCardLayout(int r, int c) {
         cardLayout[r][c] = theDeck.drawTop();
     }
 
     public void scoreCard() {
-        //Run through the columns
-        for (int i = 0; i < 3; i++) {
-            //Run through the rows
-            for (int j = 0; j < 12; j++) {
-                //Check for suit and that the top is greater by 1
-                if (cardLayout[j][i].getSuit() == cardLayout[j+1][i].getSuit() && cardLayout[j][i].getValue() == cardLayout[j+1][i].getValue()+1 ){
-                    //Remove card
-                    cardLayout[j+1][i] = new Card();
-                    //Increment score
-                    incScore();
-                    //Decrement correct column
-                    if (i == 0) { decC0();}
-                    if (i == 1) { decC1();}
-                    if (i == 2) { decC2();}
-                    if (i == 3) { decC3();}
-                }
-            }
+        //Check for matches in col 0
+        Card testCard = cardLayout[c0][0];
+        if (testCard.getSuit() == cardLayout[c1][1].getSuit() && testCard.getValue() < cardLayout[c1][1].getValue()) {
+            cardLayout[c0][0] = new Card();
+            incScore();
+            decC0();
         }
+        else if (testCard.getSuit() == cardLayout[c2][2].getSuit() && testCard.getValue() < cardLayout[c2][2].getValue()) {
+            cardLayout[c0][0] = new Card();
+            incScore();
+            decC0();
+        }
+        else if (testCard.getSuit() == cardLayout[c3][3].getSuit() && testCard.getValue() < cardLayout[c3][3].getValue()) {
+            cardLayout[c0][0] = new Card();
+            incScore();
+            decC0();
+        }
+
+        //Check for matches in col 1
+        testCard = cardLayout[c1][1];
+        if (testCard.getSuit() == cardLayout[c0][0].getSuit() && testCard.getValue() < cardLayout[c0][0].getValue()) {
+            cardLayout[c1][1] = new Card();
+            incScore();
+            decC1();
+        }
+        else if (testCard.getSuit() == cardLayout[c2][2].getSuit() && testCard.getValue() < cardLayout[c2][2].getValue()) {
+            cardLayout[c1][1] = new Card();
+            incScore();
+            decC1();
+        }
+        else if (testCard.getSuit() == cardLayout[c3][3].getSuit() && testCard.getValue() < cardLayout[c3][3].getValue()) {
+            cardLayout[c1][1] = new Card();
+            incScore();
+            decC1();
+        }
+
+        //Check for matches in col 2
+        testCard = cardLayout[c2][2];
+        if (testCard.getSuit() == cardLayout[c0][0].getSuit() && testCard.getValue() < cardLayout[c0][0].getValue()) {
+            cardLayout[c2][2] = new Card();
+            incScore();
+            decC2();
+        }
+        else if (testCard.getSuit() == cardLayout[c1][1].getSuit() && testCard.getValue() < cardLayout[c1][1].getValue()) {
+            cardLayout[c2][2] = new Card();
+            incScore();
+            decC2();
+        }
+        else if (testCard.getSuit() == cardLayout[c3][3].getSuit() && testCard.getValue() < cardLayout[c3][3].getValue()) {
+            cardLayout[c2][2] = new Card();
+            incScore();
+            decC2();
+        }
+
+        //Check for matches in col 3
+        testCard = cardLayout[c3][3];
+        if (testCard.getSuit() == cardLayout[c0][0].getSuit() && testCard.getValue() < cardLayout[c0][0].getValue()) {
+            cardLayout[c3][3] = new Card();
+            incScore();
+            decC3();
+        }
+        else if (testCard.getSuit() == cardLayout[c2][2].getSuit() && testCard.getValue() < cardLayout[c2][2].getValue()) {
+            cardLayout[c3][3] = new Card();
+            incScore();
+            decC3();
+        }
+        else if (testCard.getSuit() == cardLayout[c3][1].getSuit() && testCard.getValue() < cardLayout[c3][1].getValue()) {
+            cardLayout[c3][3] = new Card();
+            incScore();
+            decC3();
+        }
+
     }
 
     public Integer getScore() {
@@ -144,6 +231,7 @@ public class Board {
     private void incScore() {
         score++;
     }
+
 
 
 }

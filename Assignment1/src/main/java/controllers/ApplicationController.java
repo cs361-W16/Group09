@@ -62,19 +62,32 @@ public class ApplicationController {
         return Results.json().render(testBoard);
     }
 
-    /*public Result init() {
-        Deck deck = new Deck();
-        for(int x=2; x<=14; x++) {
-            deck.addCard(new Card(x, "hearts"));
-        }
+    public Result swap0() {
+        testBoard.swap0();
+        testBoard.cardToString();
 
-        return Results.json().render(deck);
+        return Results.json().render(testBoard);
     }
 
-    public Result remove(Deck deck) {
-        deck.remove();
+    public Result swap1() {
+        testBoard.swap1();
+        testBoard.cardToString();
 
-        return Results.json().render(deck);
-    }*/
+        return Results.json().render(testBoard);
+    }
+
+    public Result swap2() {
+        testBoard.swap2();
+        testBoard.cardToString();
+
+        return Results.json().render(testBoard);
+    }
+
+    public Result swap3() {
+        testBoard.swap3();
+        testBoard.cardToString();
+
+        return Results.json().render(testBoard);
+    }
 
 }
