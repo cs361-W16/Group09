@@ -38,7 +38,6 @@ public class ApplicationController {
 
     public Result acesUp() {
         Result result =  Results.html().template("views/AcesUp/AcesUp.flt.html");
-        //result.render("paulTest", "4");
         return result;
     }
 
@@ -56,6 +55,7 @@ public class ApplicationController {
     public Result score() {
         theScore.scoreCard(testBoard);
         testBoard.cardToString();
+
         return Results.json().render(testBoard);
     }
 

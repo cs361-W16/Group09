@@ -22,6 +22,11 @@ public class Scoring {
                     layout.cardLayout[j+1][i] = new Card();
                     //Increment score
                     incScore();
+                    //Decrement correct column
+                    if (i == 0) { layout.decC0();}
+                    if (i == 1) { layout.decC1();}
+                    if (i == 2) { layout.decC2();}
+                    if (i == 3) { layout.decC3();}
                 }
             }
         }
