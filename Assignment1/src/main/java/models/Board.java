@@ -90,14 +90,10 @@ public class Board {
 
     public void drawFour() {
 
-        cardLayout[c0][0] = theDeck.drawCard();
-        theDeck.remove();
-        cardLayout[c1][0] = theDeck.drawCard();
-        theDeck.remove();
-        cardLayout[c2][0] = theDeck.drawCard();
-        theDeck.remove();
-        cardLayout[c3][0] = theDeck.drawCard();
-        theDeck.remove();
+        cardLayout[c0][0] = theDeck.drawTop();
+        cardLayout[c1][0] = theDeck.drawTop();
+        cardLayout[c2][0] = theDeck.drawTop();
+        cardLayout[c3][0] = theDeck.drawTop();
 
 
         incC0();
