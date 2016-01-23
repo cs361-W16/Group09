@@ -21,7 +21,7 @@ public class Scoring {
                 //Check for suit and that the top is greater by 1
                 if (top.charAt(2) == bottom.charAt(2) && Integer.parseInt(top.substring(0,1)) == Integer.parseInt(bottom.substring(0,1))+1) {
                     //Remove card
-                    state.modBoard(j+1,i,"0");
+                    state.modLayout(j+1,i,new Card());
                     //Increment score
                     incScore();
                 }

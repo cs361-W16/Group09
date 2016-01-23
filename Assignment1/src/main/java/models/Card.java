@@ -58,6 +58,9 @@ public class Card {
 
             return "Ace of " + suit;
         }
+        else if(value == 0){
+            return "0";
+        }
         else {
             System.out.printf("%d of %s\n", value, suit);
 

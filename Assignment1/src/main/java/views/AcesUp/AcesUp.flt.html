@@ -30,6 +30,30 @@ $(document).ready(function(){
         });
     });
 });
+
+function clearBoard(){
+$.getJSON( "/AcesUp/newBoard.json", function( board ) {
+    $.each(board.state,
+        function( i, row ) {
+            $.each(row,
+                function( j, cardState) {
+                $('#c'+j+' .l'+i).text(cardState.toString());
+            });
+    });
+});
+}
+
+function swap(row){
+$.getJSON( "/AcesUp/swap?row="+row, function( board ) {
+    $.each(board.state,
+        function( i, row ) {
+            $.each(row,
+                function( j, cardState) {
+                $('#c'+j+' .l'+i).text(cardState.toString());
+            });
+    });
+});
+}
 </script>
 
 
@@ -114,11 +138,13 @@ $(document).ready(function(){
 </table>
 
 <button id="dealButton">Deal</button>
-<button id="swap1">Swap Row 1</button>
-<button id="swap2">Swap Row 2</button>
-<button id="swap3">Swap Row 3</button>
-<button id="swap4">Swap Row 4</button>
+<button id="clearButton" onclick="clearBoard()">Clear</button>
+<button id="swap1" onclick="swap(0)">Swap Row 1</button>
+<button id="swap2" onclick="swap(1)">Swap Row 2</button>
+<button id="swap3" onclick="swap(2)">Swap Row 3</button>
+<button id="swap4" onclick="swap(3)">Swap Row 4</button>
 
+<!--
 <br>
 <button id="initDeck">init</button>
 <button id="removeCardButton">remove card</button>
@@ -172,7 +198,7 @@ $.ajax({
 
 });
 
-</script>
+</script> -->
 
 </body>
 </html>

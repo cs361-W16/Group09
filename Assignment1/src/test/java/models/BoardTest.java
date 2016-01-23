@@ -65,4 +65,16 @@ public class BoardTest {
     public void testDealFourBoard() throws Exception {
 
     }
+
+    @Test
+    public void testIsEmpty() throws Exception {
+        assertEquals("Row 3 should be empty",true,testableBoard.isEmpty(3));
+
+    }
+
+    @Test
+    public void testModLayout() throws Exception {
+        
+    }
+
 }

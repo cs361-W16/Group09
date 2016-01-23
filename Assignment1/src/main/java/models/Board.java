@@ -19,7 +19,7 @@ public class Board {
         //Card array
         for (int i = 0; i < 13; i++) {
             for (int j = 0; j < 4; j++) {
-                cardLayout[i][j] = new Card;
+                cardLayout[i][j] = new Card();
             }
         }
         c0 = -1; c1 = -1; c2 = -1; c3 =-1;
@@ -68,9 +68,22 @@ public class Board {
         c3--;
     }
 
-    public void modBoard (int x, int y, String z){
-        state[x][y] = z;
+    public void modLayout (int x, int y, Card z){
+        cardLayout[x][y] = z;
+        state[x][y] = z.printCard();
     }
+
+    public boolean isEmpty(int row){
+        for(int x=0; x<=12; x++){
+            if(state[x][row] != "0"){
+                return false;
+            }
+        }
+        //System.out.printf("empty");
+        return true;
+    }
+
+    public Card getCard(int x, int y) { return cardLayout[x][y]; }
 
     public String getCardOnBoard (int x, int y) {
         return state[x][y];

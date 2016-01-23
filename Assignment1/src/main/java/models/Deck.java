@@ -35,6 +35,7 @@ public class Deck {
         s = deckList.toArray(s);
     }
 
+    /*
     private ArrayList<Card> deck;
 
     public Deck() { deck = new ArrayList<>(); }
@@ -50,5 +51,6 @@ public class Deck {
     }
 
     public void remove() { deck.remove(0); }
+    */
 
 }

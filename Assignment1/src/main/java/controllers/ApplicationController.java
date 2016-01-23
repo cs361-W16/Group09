@@ -23,6 +23,7 @@ import ninja.Results;
 import models.Board;
 
 import com.google.inject.Singleton;
+import ninja.params.Param;
 
 
 @Singleton
@@ -41,16 +42,48 @@ public class ApplicationController {
     }
 
     public Result getState() {
-        testBoard.modBoard(3,3,"Jack of Studs");
         return Results.json().render(testBoard);
     }
 
 
     public Result deal() {
-        testBoard.dealFourBoard();
+        //testBoard.dealFourBoard();
+        testBoard.modLayout(3,2,new Card(7,"diamonds"));
         return Results.json().render(testBoard);
     }
 
+    public  Result newBoard() {
+        testBoard = new Board();
+        return Results.json().render(testBoard);
+    }
+
+    public Result swap(@Param("row") int row){
+
+        int lastCard = 99;
+        testBoard.isEmpty(1);
+        for(int x=0; x<13; x++){
+            if(testBoard.getCard(x,row).getValue() != 0){
+                lastCard = x;
+            }
+        }
+
+        if (lastCard != 99) {
+            int newRow = 0;
+            for (newRow = 0; newRow <= 3; newRow++) {
+                if (testBoard.isEmpty(newRow)) {
+                    testBoard.modLayout(0, newRow, testBoard.getCard(lastCard, row));
+                    testBoard.modLayout(lastCard, row, new Card());
+                    break;
+                }
+            }
+        }
+
+        return Results.json().render(testBoard);
+    }
+
+
+
+    /*
     public Result init() {
         Deck deck = new Deck();
         for(int x=2; x<=14; x++) {
@@ -64,6 +97,6 @@ public class ApplicationController {
         deck.remove();
 
         return Results.json().render(deck);
-    }
+    }*/
 
 }
