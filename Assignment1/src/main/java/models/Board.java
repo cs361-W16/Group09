@@ -13,7 +13,7 @@ public class Board {
         //Text array
         for (int i = 0; i < 13; i++) {
             for (int j = 0; j < 4; j++) {
-                state[i][j] = "0";
+                state[i][j] = "";
             }
         }
         //Card array
