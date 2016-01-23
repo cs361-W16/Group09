@@ -31,10 +31,6 @@ public class ApplicationController {
     public Board testBoard = new Board();
     public Scoring theScore = new Scoring();
 
-    //for the game
-    public Board gameBoard = new Board();
-    public Deck gameDeck = new Deck();
-
     public Result index() {
         return Results.html();
     }
@@ -45,6 +41,8 @@ public class ApplicationController {
     }
 
     public Result getState() {
+        testBoard = new Board();
+
         testBoard.cardToString();
         return Results.json().render(testBoard);
     }

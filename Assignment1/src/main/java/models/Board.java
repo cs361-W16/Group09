@@ -8,6 +8,7 @@ public class Board {
     public Card[][] cardLayout = new Card[13][4];
     public Integer c0, c1, c2, c3;
     public Deck theDeck = new Deck();
+    public Integer score;
 
     //Shuffle function should add this.
     public Board() {
@@ -25,6 +26,7 @@ public class Board {
         }
         theDeck.newDeck();
         c0 = 0; c1 = 0; c2 = 0; c3 = 0;
+        score = 0;
     }
 
     //Converts the card array to a string array
@@ -114,5 +116,35 @@ public class Board {
     public void modCardLayout(int r, int c) {
         cardLayout[r][c] = theDeck.drawTop();
     }
+
+    public void scoreCard() {
+        //Run through the columns
+        for (int i = 0; i < 3; i++) {
+            //Run through the rows
+            for (int j = 0; j < 12; j++) {
+                //Check for suit and that the top is greater by 1
+                if (cardLayout[j][i].getSuit() == cardLayout[j+1][i].getSuit() && cardLayout[j][i].getValue() == cardLayout[j+1][i].getValue()+1 ){
+                    //Remove card
+                    cardLayout[j+1][i] = new Card();
+                    //Increment score
+                    incScore();
+                    //Decrement correct column
+                    if (i == 0) { decC0();}
+                    if (i == 1) { decC1();}
+                    if (i == 2) { decC2();}
+                    if (i == 3) { decC3();}
+                }
+            }
+        }
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    private void incScore() {
+        score++;
+    }
+
 
 }

@@ -5,14 +5,18 @@
 
 <script>
 
-//Runs at startup
-$.getJSON( "/AcesUp/state.json", function( board ) {
-    $.each(board.state,
-        function( i, row ) {
-            $.each(row,
-                function( j, cardState) {
-                $('#c'+j+' .l'+i).text(cardState.toString());
+//Reset Board
+$(document).ready(function(){
+    $('#newGame').click(function(){
+        $.getJSON( "/AcesUp/state.json", function( board ) {
+            $.each(board.state,
+                function( i, row ) {
+                    $.each(row,
+                        function( j, cardState) {
+                        $('#c'+j+' .l'+i).text(cardState.toString());
+                    });
             });
+        });
     });
 });
 
@@ -136,6 +140,7 @@ $(document).ready(function(){
 <button id="swap3" onclick="swap(2)">Swap Row 3</button>
 <button id="swap4" onclick="swap(3)">Swap Row 4</button>
 <button id="scoreButton">Score</button>
+<button id="newGame">New Game</button>
 
 <br>
 <button id="initDeck">init</button>
