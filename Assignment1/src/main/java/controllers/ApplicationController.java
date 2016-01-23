@@ -29,7 +29,6 @@ import com.google.inject.Singleton;
 @Singleton
 public class ApplicationController {
     public Board testBoard = new Board();
-    public Deck theDeck = new Deck();
     public Scoring theScore = new Scoring();
 
     //for the game
@@ -46,13 +45,15 @@ public class ApplicationController {
     }
 
     public Result getState() {
-        testBoard.modBoard(3,3,"Jack of Studs");
+        //testBoard.modBoard(3,3,"Jack of Studs");
         return Results.json().render(testBoard);
     }
 
 
     public Result deal() {
-        testBoard.drawFour(theDeck);
+        testBoard.drawFour();
+        testBoard.cardToString();
+
         return Results.json().render(testBoard);
     }
 
