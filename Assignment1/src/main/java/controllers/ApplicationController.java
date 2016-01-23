@@ -47,7 +47,7 @@ public class ApplicationController {
 
 
     public Result deal() {
-        testBoard.modBoard(2,2,"Hella");
+        testBoard.dealFourBoard();
         return Results.json().render(testBoard);
     }
 

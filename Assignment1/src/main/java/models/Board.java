@@ -5,6 +5,7 @@ package models;
  */
 public class Board {
     public String[][] state = new String[13][4];
+    public Integer c0, c1, c2, c3;
 
     //Shuffle function should add this.
     public Board() {
@@ -13,6 +14,7 @@ public class Board {
                 state[i][j] = "0";
             }
         }
+        c0 = 0; c1 = 0; c2 = 0; c3 =0;
     }
 
     public void modBoard (int x, int y, String z){
@@ -26,4 +28,6 @@ public class Board {
     public void dealFourBoard() {
 
     }
+
+
 }
