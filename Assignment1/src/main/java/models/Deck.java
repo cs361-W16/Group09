@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Deck {
 
-    /*public Card[] newDeck(){
+    public Card[] newDeck(){
         Card d[] = new Card[52];
         if(d.length != 52){
             System.out.printf("Error: Deck must have 52 cards\n");
@@ -33,7 +33,7 @@ public class Deck {
         List<Card> deckList = Arrays.asList(s);
         Collections.shuffle(deckList);
         s = deckList.toArray(s);
-    }*/
+    }
 
     private ArrayList<Card> deck;
 
