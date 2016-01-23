@@ -14,6 +14,17 @@ $.getJSON( "/AcesUp/state.json", function( board ) {
             });
     });
 });
+
+$.getJSON( "/AcesUp/deal.json", function( board ) {
+    $.each(board.deal,
+        function( i, row ) {
+            $.each(row,
+                function( j, cardState) {
+                console.log('#c'+(j+1)+'.l'+i);
+                $('#c'+j+' .l'+i).text(cardState.toString());
+            });
+    });
+});
 </script>
 
 
