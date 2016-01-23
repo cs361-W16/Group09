@@ -116,6 +116,10 @@ public class Board {
         modCardLayout(c3,3);
     }
 
+    public void modCardLayout(int r, int c) {
+        cardLayout[r][c] = theDeck.drawTop();
+    }
+
     public boolean isEmpty(int row){
         for(int x=0; x<=12; x++){
             if(state[x][row] != "0"){
@@ -125,6 +129,7 @@ public class Board {
         return true;
     }
 
+    //Swap from col 0
     public void swap0() {
         if (c1 == 0) {
             cardLayout[0][1] = cardLayout[getC(0)][0];
@@ -146,6 +151,7 @@ public class Board {
         }
     }
 
+    //Swap fom col 1
     public void swap1() {
         if (c0 == 0) {
             cardLayout[0][1] = cardLayout[getC(1)][1];
@@ -167,6 +173,7 @@ public class Board {
         }
     }
 
+    //Swap from col 2
     public void swap2() {
         if (c0 == 0) {
             cardLayout[0][0] = cardLayout[getC(2)][2];
@@ -188,6 +195,7 @@ public class Board {
         }
     }
 
+    //Swap from col 3
     public void swap3() {
         if (c0 == 0) {
             cardLayout[0][0] = cardLayout[getC(3)][3];
@@ -207,10 +215,6 @@ public class Board {
             decC3();
             incC2();
         }
-    }
-
-    public void modCardLayout(int r, int c) {
-        cardLayout[r][c] = theDeck.drawTop();
     }
 
     public void scoreCard() {
