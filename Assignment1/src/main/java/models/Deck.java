@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class Deck {
 
-    private ArrayList<Card> deck;
+    public ArrayList<Card> deck;
 
     public Deck() { deck = new ArrayList<>(); }
 

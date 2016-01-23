@@ -5,8 +5,8 @@ package models;
  */
 public class Card {
 
-    private int value;
-    private String suit;
+    public int value;
+    public String suit;
 
     public Card(){
         value = 0;

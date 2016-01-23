@@ -45,7 +45,7 @@ public class ApplicationController {
     }
 
     public Result getState() {
-        testBoard.modBoard(3,3,"Jack of Studs");
+        testBoard.cardToString();
         return Results.json().render(testBoard);
     }
 

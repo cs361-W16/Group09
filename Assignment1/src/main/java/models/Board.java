@@ -23,7 +23,8 @@ public class Board {
                 cardLayout[i][j] = new Card();
             }
         }
-        c0 = -1; c1 = -1; c2 = -1; c3 =-1;
+        theDeck.newDeck();
+        c0 = 0; c1 = 0; c2 = 0; c3 = 0;
     }
 
     //Converts the card array to a string array
@@ -90,11 +91,10 @@ public class Board {
 
     public void drawFour() {
 
-        cardLayout[c0][0] = theDeck.drawTop();
-        cardLayout[c1][0] = theDeck.drawTop();
-        cardLayout[c2][0] = theDeck.drawTop();
-        cardLayout[c3][0] = theDeck.drawTop();
-
+        modCardLayout(c0,0);
+        modCardLayout(c1,1);
+        modCardLayout(c2,2);
+        modCardLayout(c3,3);
 
         incC0();
         incC1();
@@ -109,6 +109,10 @@ public class Board {
             }
         }
         return true;
+    }
+
+    public void modCardLayout(int r, int c) {
+        cardLayout[r][c] = theDeck.drawTop();
     }
 
 }
