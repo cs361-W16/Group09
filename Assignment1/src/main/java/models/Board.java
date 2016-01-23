@@ -14,7 +14,41 @@ public class Board {
                 state[i][j] = "0";
             }
         }
-        c0 = 0; c1 = 0; c2 = 0; c3 =0;
+        c0 = -1; c1 = -1; c2 = -1; c3 =-1;
+    }
+
+    //Columns keep track of the highest position of a card in that column
+
+    public void incC0() {
+        c0++;
+    }
+
+    public void incC1() {
+        c1++;
+    }
+
+    public void incC2() {
+        c2++;
+    }
+
+    public void incC3() {
+        c3++;
+    }
+
+    public void decC0() {
+        c0--;
+    }
+
+    public void decC1() {
+        c1--;
+    }
+
+    public void decC2() {
+        c2--;
+    }
+
+    public void decC3() {
+        c3--;
     }
 
     public void modBoard (int x, int y, String z){
